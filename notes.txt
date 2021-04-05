@@ -1,0 +1,4 @@
+sequelize model:generate --name=post --attributes title:string,description:string,picture:string,key:string,categoryId:integer
+sequelize model:generate --name=category --attributes name:string,description:string
+sequelize model:generate --name=collection --attributes tagId:integer,categoryId:integer
+sequelize model:generate --name=tag --attributes name:string
