@@ -22,7 +22,7 @@ You will build a backend to power our knock-off version of Craigslist. (No front
 
 ### Stretch goals
 1. When a post gets created, a random 8-character string is generated and saved as its key. This key serves as the pseudo-password to restrict who can edit this post.
-1. When a post gets created 
+1. After creating a post, the response to the `POST /categories/:id/posts` request contains the key of the post that got created. The user is expected to hold onto this value for future editing and deleting of that post.
 1. A user can delete a post by using its key (`DELETE /posts/:key`)
 1. A user can edit a post using its key (`PUT /posts/:key`)
 
