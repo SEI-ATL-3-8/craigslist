@@ -8,6 +8,8 @@ Seed a few categories: some good ideas are "For Sale", "Community", and "Discuss
 
 Seed a few tags: some good ideas are "Best-Of" and "Offensive".
 
+For seeding, you can use `sequelize seed:generate`, then put some `model.whicheverModel.create` statements in it, then `sequelize db:seed:all`. Or, you can just use a dbTest file. You could even just put them in manually through psql.
+
 ### Core goals
 You will build a backend to power our knock-off version of Craigslist. (No frontend is required as part of the core goals.) The required user stories are:
 
