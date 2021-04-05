@@ -13,14 +13,14 @@ For seeding, you can use `sequelize seed:generate`, then put some `model.whichev
 ### Core goals
 You will build a backend to power our knock-off version of Craigslist. (No frontend is required as part of the core goals.) The required user stories are:
 
-1. A user can get a list of all existing categories (`GET /categories`)
-1. A user can get info on a single existing category (`GET /categories/:id`)
-1. A user can create a new post inside an existing category(`POST /categories/:id/posts`)
-1. A user can see a list of all posts inside an existing category (`GET /categories/:id/posts`)
-1. A user can see a list of existing tags(`GET /tags`)
-1. A user can associate an existing category with an existing tag (`PUT /categories/:categoryId/tags/:tagId`)
-1. A user can see a list of all posts that are associated with a tag (`GET /tags/:id/posts`)
-1. A user can see a list of all tags that are associated with a post (`GET /posts/:id/tags`)
+1. A user can get a list of all existing categories (`GET /categories`) **
+1. A user can get info on a single existing category (`GET /categories/:id`) **
+1. A user can create a new post inside an existing category(`POST /categories/:id/posts`) **
+1. A user can see a list of all posts inside an existing category (`GET /categories/:id/posts`) **
+1. A user can see a list of existing tags(`GET /tags`) **
+1. A user can associate an existing category with an existing tag (`PUT /categories/:categoryId/tags/:tagId`) **
+1. A user can see a list of all posts that are associated with a tag (`GET /tags/:id/posts`)**
+1. A user can see a list of all tags that are associated with a post (`GET /posts/:id/tags`)**
 
 ### Stretch goals
 1. When a post gets created, a random 8-character string is generated and saved as its key. This key serves as the pseudo-password to restrict who can edit this post.

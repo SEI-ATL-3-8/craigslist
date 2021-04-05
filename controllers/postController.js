@@ -100,10 +100,25 @@ postController.category = async (req,res) => {
     let cat = await models.category.create({
         name: req.body.name
     })
-    post.addTag(cat)
+    post.addCategory(cat)
     res.json({post, cat
     })
 
 }
+postController.getTags = async (req, res) => {
+    try {
+        const post = await models.post.findOne({
+        where: {
+            id: req.params.id
+        }
+        })
 
+        const tags = await post.getTags()
+
+        res.json({posts, tags})
+    } catch (error) {
+        res.json({error})
+    }
+
+}
 module.exports = postController
