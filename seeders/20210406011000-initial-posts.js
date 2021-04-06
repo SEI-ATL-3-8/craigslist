@@ -4,7 +4,7 @@ const e = require("cors");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('posts', [{
+    await queryInterface.bulkInsert('posts', [{
       title: "bike for sale",
       body: "you can do really cool tricks on it",
       createdAt: new Date(),
