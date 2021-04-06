@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       const { tag, category} = models;
-      tag.belongsTomany(category,{through: 'tagCategory'});
+      tag.belongsToMany(category,{through: 'tagCategory'});
     }
   };
   tag.init({
