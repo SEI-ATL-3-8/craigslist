@@ -75,41 +75,7 @@ categoriesController.assCatTag = async (req, res) => {
         res.json({error})
     }
 }
-// categoriesController.assCatTag = async (req, res) => {
-//     try {
-//         const foundCategory = await category.findOne({where: {id: req.params.categoryId}})
-//         const foundTag = await tag.findOne({where: {id: req.params.tagId}})
-//         const association = await foundCategory.addTag(foundTag)
-//         res.json({
-//             category: foundCategory,
-//             tag: foundTag,
-//             association
-//         })
-//     } catch (error) {
-//         res.json({error})
-//     }
-// }
 
-// categoriesController.assCatTag = async (req,res) => {
-//     try {
-//      const category = await models.catergory.findOne({
-//          where:{
-//              id: req.params.catergoryId
-//          }
-//      })
-
-//      const tag = await models.tag.findOne({
-//          where:{
-//              id: req.params.tagId
-//          }
-//      })
-
-//      await category.addTag(tag)
-//      res.json("tagging created");
-//     } catch (error) {
-//         res.json({error})
-//     }
-//  }
 
 
 module.exports = categoriesController
