@@ -10,16 +10,23 @@ console.log(`Listening on port ${PORT}`)
 console.log('The Server is Listening!')
 routesReport.print()
 })
-
-app.get('/', (req,res) => {
-  res.send('Hi, welcome to my routes')
-})
-
-
-
-
-// const postRoutes = require('./routers/postRoutes')
-// const commentRoutes = require('./routers/commentRoutes')
-// const topicRoutes = require('./routers/topicRoutes')
-
 app.use(cors())
+
+const postRouter = require('./routers/postRouter')
+app.use('/post', postRouter)
+
+const categoryRouter = require('./routers/categoryRouter')
+app.use('/category', categoryRouter)
+
+const tagRouter = require('./routers/tagRouter')
+app.use('/tag', tagRouter)
+
+// const getAllCategory = async (req,res) => {
+//   try {
+//     let categories = await models.category.findAll()
+//   res.json({categories})
+//   } catch (error) {
+//   res.json('cant get categories')
+//   }
+// }
+// getAllCategory()
