@@ -12,13 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       const {post, category} = models;
-      category.belongsToMany(post,{through: 'categoryPost'});
+      post.belongsTo(category);
     }
   };
   post.init({
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     image_url: DataTypes.STRING,
+    categoryId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'post',
