@@ -25,7 +25,7 @@ categoryControllers.getOne = async (req, res) => {
             description: req.body.description
         })
 
-        category.addPost(newPost)
+        oneCategory.addPost(newPost)
         
         res.json({oneCategory, newPost})
 
