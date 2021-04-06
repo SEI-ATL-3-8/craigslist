@@ -4,7 +4,7 @@ const categoryRoutes = express.Router()
 
 categoryRoutes.get('/', categoryController.getAll)
 categoryRoutes.get('/:id', categoryController.findOne)
-categoryRoutes.post('/', categoryController.create)
+categoryRoutes.post('/:id/posts', categoryController.create)
 
 
 

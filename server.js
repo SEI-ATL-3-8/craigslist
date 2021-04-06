@@ -11,5 +11,7 @@ app.listen(PORT, () => {
     })
 
 const categoryRoutes = require('./routes/categoryRoutes')
+const tagRoutes = require('./routes/tagRoutes')
 
 app.use('/categories', categoryRoutes)
+app.use('/tags', tagRoutes)

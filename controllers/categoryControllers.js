@@ -26,11 +26,17 @@ categoryController.findOne = async (req, res) => {
 
 categoryController.create = async (req, res) => {
     try {
-        let category = await models.category.create({
+        let category = await models.category.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        let blogPost = await models.category.create({
             title: req.body.title,
             description: req.body.description
         })
-        res.json({category})
+        category.addPost(post)
+        res.json({category, blogPost})
     } catch (error) {
         res.json({error})
     }
