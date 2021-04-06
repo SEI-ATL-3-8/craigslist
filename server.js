@@ -15,6 +15,8 @@ app.use(cors())
 
 const catRoutes = require('./routes/catRoutes')
 const postRoutes = require('./routes/postRoutes')
+const tagRoutes = require('./routes/tagRoutes')
 
 app.use('/categories', catRoutes)
-app.use('/categories', postRoutes)
+app.use('/posts', postRoutes)
+app.use('/tags', tagRoutes)
