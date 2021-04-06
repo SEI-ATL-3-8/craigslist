@@ -1,4 +1,4 @@
-const { category, post } = require('./../models/');
+const { category, post, tag } = require('./../models/');
 
 const categoryController = {};
 
@@ -73,6 +73,41 @@ categoryController.getCategoryPost = async (req,res) => {
     catch(error) {
         res.json(error);
     }
+}
+
+categoryController.updateCategoryTag = async (req,res) => {
+
+    try {
+        const {categoryId, tagId} = req.params;
+
+        const findCategory = await category.findOne({
+            where: {
+                id: categoryId
+            }
+        });
+
+        const findTag = await tag.findOne({
+            where: {
+                id: tagId
+            }
+        });
+
+        await findCategory.addTag(findTag);
+        
+        res.json({
+            message: 'ok',
+            categoryId,
+            tagId,
+        });
+
+    }
+    catch(error) {
+        res.json(error);
+    }
+   
+
+    
+
 }
 
 
