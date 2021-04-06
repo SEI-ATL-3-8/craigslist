@@ -11,6 +11,13 @@ console.log('The Server is Listening!')
 routesReport.print()
 })
 
+app.get('/', (req,res) => {
+  res.send('Hi, welcome to my routes')
+})
+
+
+
+
 // const postRoutes = require('./routers/postRoutes')
 // const commentRoutes = require('./routers/commentRoutes')
 // const topicRoutes = require('./routers/topicRoutes')
