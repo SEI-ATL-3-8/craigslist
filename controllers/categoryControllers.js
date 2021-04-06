@@ -42,4 +42,19 @@ categoryController.create = async (req, res) => {
     }
 }
 
+// categoryController.findOne = async (req, res) => {
+//     try {
+//         let category = await models.category.findOne({
+//             where: {
+//                 id: req.params.id
+//             }
+//         })
+
+//         let tags = await category.getTags()
+//         res.json({category, tags})
+//     } catch (error) {
+//         res.json({error})
+//     }
+// }
+
 module.exports = categoryController

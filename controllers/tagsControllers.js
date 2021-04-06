@@ -4,7 +4,7 @@ const tagsControllers = {}
 
 tagsControllers.getAll = async (req, res) => {
     try {
-        let tags = await models.tags.findAll()
+        let tags = await models.tag.findAll()
         res.json({tags})
     } catch (error) {
         res.json({error})

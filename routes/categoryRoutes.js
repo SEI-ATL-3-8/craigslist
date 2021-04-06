@@ -5,6 +5,7 @@ const categoryRoutes = express.Router()
 categoryRoutes.get('/', categoryController.getAll)
 categoryRoutes.get('/:id', categoryController.findOne)
 categoryRoutes.post('/:id/posts', categoryController.create)
+// categoryRoutes.put('/:id/tag', categoryController.update)
 
 
 
