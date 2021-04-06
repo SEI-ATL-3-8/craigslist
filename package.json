@@ -21,6 +21,7 @@
   "homepage": "https://github.com/SEI-ATL-3-8/craigslist#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "crypto-js": "^4.0.0",
     "express": "^4.17.1",
     "pg": "^8.5.1",
     "rowdy-logger": "^1.0.2",
