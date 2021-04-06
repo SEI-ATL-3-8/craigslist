@@ -1,0 +1,4 @@
+sequelize model:generate --name=category --attributes name:text
+sequelize model:generate --name=post --attributes name:text,categoryId:integer
+sequelize model:generate --name=join --attributes postId:integer,tagId:integer
+sequelize model:generate --name=tag --attributes name:text
