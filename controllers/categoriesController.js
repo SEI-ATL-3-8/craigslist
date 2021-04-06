@@ -53,7 +53,7 @@ categoriesController.getAllPosts = async (req, res) => {
         let posts = await cat.getPosts()
         res.json({cat, posts})
     } catch (error) {
-        res.json({error})
+        res.json ({error})
     }
 }
 
