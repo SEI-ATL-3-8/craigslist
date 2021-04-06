@@ -1,0 +1,12 @@
+const express = require('express')
+const categoryRouter = express.Router()
+const { create, getAll, find, update, delete: destroy, getPosts, associateWithPost, post, associateWithTag } = require('../controllers/categoryController')
+categoryRouter.post('/', create)
+categoryRouter.get('/', getAll)
+categoryRouter.get('/:id', find)
+categoryRouter.put('/:id', update)
+categoryRouter.delete('/:id', destroy)
+categoryRouter.put('/:categoryId/tags/:tagId', associateWithTag)
+categoryRouter.get('/:id/posts', getPosts)
+categoryRouter.post('/:id/posts', post)
+module.exports = categoryRouter
