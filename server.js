@@ -5,6 +5,8 @@ const rowdy = require('rowdy-logger');
 const routesReport = rowdy.begin(app)
 const cors = require('cors')
 const categoryRoutes = require('./routes/categoryRoutes')
+const tagRoutes = require('./routes/tagRoutes')
+const postRoutes = require('./routes/postRoutes')
 
 app.use(cors())
 
@@ -15,6 +17,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/categories', categoryRoutes)
+app.use('/tags', tagRoutes)
+app.use('/posts', postRoutes)
 
 
 

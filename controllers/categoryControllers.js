@@ -2,7 +2,7 @@ const models = require('../models')
 const crypto = require('crypto')
 
 const categoryControllers = {}
-let keys = []
+
 
 categoryControllers.getAll = async (req, res) => {
     try {
@@ -55,6 +55,28 @@ categoryControllers.getPosts = async (req, res) => {
         })
         const allPosts = await category.getPosts()
         res.json({category, allPosts})
+    } catch (error) {
+        res.json({error})
+    }
+}
+
+categoryControllers.associateTags = async (req, res) => {
+    try {
+        const category = await models.category.findOne({
+            where: {
+                id: req.params.categoryId
+            }
+        })
+        const tag = await models.tag.findOne({
+            where: {
+                id: req.params.tagId
+            }
+        })
+        await category.addTag(tag)
+
+        res.json({
+            message: `You successfully added ${tag.id} to ${category.id}. Way to go you!`
+        })
     } catch (error) {
         res.json({error})
     }
