@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.post.belongsTo(models.category)
+      models.post.belongsToMany(models.tag, {through: 'tagging'})
     }
   };
   post.init({
