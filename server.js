@@ -14,5 +14,7 @@ app.listen(PORT, () => {
 app.use(cors())
 
 const catRoutes = require('./routes/catRoutes')
+const postRoutes = require('./routes/postRoutes')
 
 app.use('/categories', catRoutes)
+app.use('/categories', postRoutes)
