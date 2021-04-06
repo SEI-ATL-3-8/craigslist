@@ -1,0 +1,11 @@
+- associations: specifically the verbs
+- associating the tags w/ the categories
+
+
+
+
+3. A user can create a new post inside an existing category (POST /categories/:id/posts)
+const someCategory = models.category.findOne....
+const newPost = models.post.create....
+someCategory.addPost(newPost)
+
