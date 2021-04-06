@@ -11,4 +11,18 @@ tagController.getAllTags = async (req, res) => {
     }
 }
 
+tagController.getAllPosts = async (req, res) => {
+    try {
+        let tag = await models.tag.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        let posts = tag.getPosts()
+        res.json({posts})
+    } catch (error) {
+        res.json({error})
+    }
+}
+
 module.exports = tagController

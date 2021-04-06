@@ -56,6 +56,30 @@ categoryController.getPostCat = async (req, res) => {
     }
 }
 
+categoryController.associateWithTag = async (req, res) => {
+    try {
+    const category = await models.category.findOne({
+        where: {
+            id: req.params.categoryId
+        }
+    })
+    const tag = await models.tag.findOne({
+        where: {
+            id: req.params.tagId
+        }
+    })
+
+    await category.addTag(tag)
+
+    res.json({message: 'ok', 
+              categoryId: category.id,
+              tagId: tag.id
+            })
+    } catch (error) {
+            res.json({error})
+    }
+}
+
 
 
 // postController.createPost = async (req,res) => {
