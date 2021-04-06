@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.tag.belongsToMany(models.post, {through:'join'})
       models.tag.hasMany(models.join)
+      models.tag.belongsToMany(models.category, {through:'join2'})
     }
   };
   tag.init({
