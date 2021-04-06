@@ -1,10 +1,15 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+const rowdy = require('rowdy-logger')
+// const cors = require('cors')
+const routesReport = rowdy.begin(app)
+app.use(express.json())
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`)
+    routesReport.print()
+    })
 
-app.get('/puppies', (req, res) => {
-    res.send('You have reached the GET /puppies route!')
-  })
+const categoryRoutes = require('./routes/categoryRoutes')
 
-  app.listen(3000, () => {
-    console.log('the server is listening!')
-  })
+app.use('/categories', categoryRoutes)
