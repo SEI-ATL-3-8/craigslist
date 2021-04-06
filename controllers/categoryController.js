@@ -42,6 +42,20 @@ categoryController.createPostCat = async (req, res) => {
     }
 }
 
+categoryController.getPostCat = async (req, res) => {
+    try {
+    const category = await models.category.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+    const allPosts = await category.getPosts()
+    res.json({allPosts})
+    } catch (error) {
+        res.json({error})
+    }
+}
+
 
 
 // postController.createPost = async (req,res) => {
