@@ -27,9 +27,33 @@ categoriesController.getOne = async (req, res) => {
 
 categoriesController.createPost = async (req, res) => {
     try {
-        
+        let cat = await models.category.findOne({
+            where:{
+                id: req.params.id
+            }
+        })
+        let newPost = await models.post.create({
+            name: req.body.name,
+            description: req.body.description
+        })
+        cat.addPost(newPost)
+        res.json({cat, newPost})
     } catch (error) {
-        
+        res.json({error})
+    }
+}
+
+categoriesController.getAllPosts = async (req, res) => {
+    try {
+        let cat = await models.category.findOne({
+            where:{
+                id: req.params.id
+            }
+        })
+        let posts = await cat.getPosts()
+        res.json({cat, posts})
+    } catch (error) {
+        res.json({error})
     }
 }
 
